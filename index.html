@@ -1,0 +1,53 @@
+<html>
+<head></head>
+<body>
+<button class="toggler">Toggler</button>
+<h1 class="title"> my title </h1>
+<h2 class="sub-title"> my sub-title </h2>
+
+<style>
+	body {
+		background-color: lightblue;
+	}
+
+	h1, h2 {
+		font-family: "Arial Black";
+		font-size: 70px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	.title {
+		color: bisque
+	}
+
+	.sub-title {
+		color: burlywood
+	}
+
+	button {
+		font-size: 40px;
+		border: none;
+		background: white;
+		cursor: pointer;
+		padding: 5px 10px;
+	}
+
+	[data-active] button {
+		background: aquamarine;
+	}
+
+	[data-active].title {
+		color: cornflowerblue;
+	}
+
+	[data-active].sub-title {
+		color: darkslategray;
+	}
+</style>
+<script src="src/TheToggler.js"></script>
+<script>
+	const TestToggler = TheToggler('.toggler', ['.title', '.sub-title'], {activeByDefault: true})
+</script>
+</body>
+</html>
