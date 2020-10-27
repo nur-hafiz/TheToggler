@@ -3,7 +3,7 @@
 <body>
 <button class="toggler">Toggler</button>
 <h1 class="title"> my title </h1>
-<h2 class="sub-title"> my sub-title </h2>
+<h2 class="title sub-title"> my sub-title </h2>
 
 <style>
 	body {
@@ -47,9 +47,9 @@
 </style>
 <script src="src/TheToggler.js"></script>
 <script>
-	const TestToggler = TheToggler('.toggler', ['.title', '.sub-title'], {
+	const TestToggler = TheToggler('.toggler', '.title', {
 		activeByDefault: true,
-		deactivateWhenClickOutTargets: false,
+		deactivateWhenClickOutTargets: true,
 		deactivateWhenClickTargets: true
 	})
 </script>

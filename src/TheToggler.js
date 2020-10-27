@@ -69,8 +69,6 @@
 				this.options[key] = options[key]
 		}
 
-		this.isActive = this.options.activeByDefault
-
 		if (this.options.activeByDefault)
 			this.toggleActive()
 	}
