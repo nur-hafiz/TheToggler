@@ -1,6 +1,8 @@
 (global => {
 	const DEFAULT_OPTIONS = {
 		activeByDefault: false,
+		deactivateWhenClickTargets: false,
+		deactivateWhenClickOutTargets: false,
 	}
 
 	const TheToggler = (toggler, targets, options) => {
@@ -27,25 +29,44 @@
 	}
 
 	TheToggler.prototype.handleClick = function () {
-		this.toggler.addEventListener('click', () => {
-			this.toggleActive()
+		document.addEventListener('click', event => {
+			// Check if toggler was clicked
+			const USER_CLICKED_TOGGLER = this.toggler.contains(event.target)
+
+			// Check if targets were clicked
+			// If targets were clicked, filtered array will have at least 1 element
+			const USER_CLICKED_TARGET = this.targets.filter(target => {
+				return target.contains(event.target)
+			}).length !== 0
+
+			if (USER_CLICKED_TOGGLER)
+				return this.toggleActive()
+
+			if (this.isActive && this.options.deactivateWhenClickTargets && USER_CLICKED_TARGET)
+				return this.toggleActive()
+
+			// Check if there are clicks outside of toggler and targets when items are clicked
+			if (this.isActive && this.options.deactivateWhenClickOutTargets && (!USER_CLICKED_TARGET || USER_CLICKED_TOGGLER))
+				return this.toggleActive()
 		})
 	}
 
 	TheToggler.prototype.toggleActive = function () {
 		[this.toggler, ...this.targets].map(el => {
 			this.isActive
-				? el.setAttribute('data-active', '')
-				: el.removeAttribute('data-active', '')
+				? el.removeAttribute('data-active', '')
+				: el.setAttribute('data-active', '')
 		})
 
 		this.isActive = !this.isActive
 	}
 
+	// Check options given in TheToggler function
+	// Any missing option will default to DEFAULT_OPTIONS
 	TheToggler.prototype.initOptions = function (options) {
 		for (let key in DEFAULT_OPTIONS) {
 			if (options.hasOwnProperty(key))
-				this.options[key] = options[key];
+				this.options[key] = options[key]
 		}
 
 		this.isActive = this.options.activeByDefault

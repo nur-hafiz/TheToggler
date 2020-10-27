@@ -47,7 +47,11 @@
 </style>
 <script src="src/TheToggler.js"></script>
 <script>
-	const TestToggler = TheToggler('.toggler', ['.title', '.sub-title'], {activeByDefault: true})
+	const TestToggler = TheToggler('.toggler', ['.title', '.sub-title'], {
+		activeByDefault: true,
+		deactivateWhenClickOutTargets: false,
+		deactivateWhenClickTargets: true
+	})
 </script>
 </body>
 </html>
