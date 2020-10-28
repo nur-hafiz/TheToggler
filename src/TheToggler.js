@@ -5,9 +5,7 @@
 		deactivateWhenClickOutTargets: false,
 	}
 
-	const TheToggler = (toggler, targets, options) => {
-		return new TheToggler.init(toggler, targets, options);
-	}
+	const TheToggler = (toggler, targets, options) => new TheToggler.init(toggler, targets, options);
 
 	TheToggler.init = function (toggler, targets, options = {}) {
 		this.toggler = typeof toggler === 'string'
@@ -35,9 +33,7 @@
 
 			// Check if targets were clicked
 			// If targets were clicked, filtered array will have at least 1 element
-			const USER_CLICKED_TARGET = this.targets.filter(target => {
-				return target.contains(event.target)
-			}).length !== 0
+			const USER_CLICKED_TARGET = this.targets.filter(target => target.contains(event.target)).length !== 0
 
 			if (USER_CLICKED_TOGGLER)
 				return this.toggleActive()
