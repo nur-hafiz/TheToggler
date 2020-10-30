@@ -23,7 +23,7 @@
 	}
 
 	TheToggler.prototype = {
-		options: DEFAULT_OPTIONS,
+		options: undefined,
 		isActive: false,
 		debounceID: undefined,
 	}
@@ -76,9 +76,9 @@
 	// Check options given in TheToggler function
 	// Any missing option will default to DEFAULT_OPTIONS
 	TheToggler.prototype.initOptions = function (options) {
-		for (let key in DEFAULT_OPTIONS) {
-			if (options.hasOwnProperty(key))
-				this.options[key] = options[key]
+		this.options = {
+			...DEFAULT_OPTIONS,
+			...options,
 		}
 
 		if (this.options.activeByDefault)

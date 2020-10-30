@@ -48,7 +48,8 @@
 <script src="src/TheToggler.js"></script>
 <script>
 	const TestToggler = TheToggler('.toggler', '.title', {
-		activeByDefault: true,
+		activateWith: 'attr',
+		activeKey: 'my-active-key',
 		deactivateWhenClickOutTargets: true,
 		deactivateWhenClickTargets: true
 	})
