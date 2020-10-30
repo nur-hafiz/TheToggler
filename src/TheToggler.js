@@ -30,6 +30,8 @@
 
 	TheToggler.prototype.handleClick = function () {
 		document.addEventListener('click', event => {
+			const {deactivateWhenClickTargets, deactivateWhenClickOutTargets} = this.options;
+
 			// Check if toggler was clicked
 			const USER_CLICKED_TOGGLER = this.toggler.contains(event.target)
 
@@ -40,11 +42,11 @@
 			if (USER_CLICKED_TOGGLER)
 				return this.toggleActive()
 
-			if (this.isActive && this.options.deactivateWhenClickTargets && USER_CLICKED_TARGET)
+			if (this.isActive && deactivateWhenClickTargets && USER_CLICKED_TARGET)
 				return this.toggleActive()
 
 			// Check if there are clicks outside of toggler and targets when items are clicked
-			if (this.isActive && this.options.deactivateWhenClickOutTargets && (!USER_CLICKED_TARGET || USER_CLICKED_TOGGLER))
+			if (this.isActive && deactivateWhenClickOutTargets && (!USER_CLICKED_TARGET || USER_CLICKED_TOGGLER))
 				return this.toggleActive()
 		})
 	}
