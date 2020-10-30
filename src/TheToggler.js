@@ -1,5 +1,7 @@
 (global => {
 	const DEFAULT_OPTIONS = {
+		activateWith: 'attr',
+		activeKey: 'data-active',
 		activeByDefault: false,
 		deactivateWhenClickTargets: false,
 		deactivateWhenClickOutTargets: false,
@@ -14,7 +16,7 @@
 
 		this.targets = typeof targets === 'string'
 			? [...document.querySelectorAll(targets)]
-			: [...targets.map(target => document.querySelector(target))]
+			: targets.map(target => document.querySelector(target))
 
 		this.initOptions(options);
 		this.handleClick();
