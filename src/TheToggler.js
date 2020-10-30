@@ -10,10 +10,14 @@
 	const TheToggler = (toggler, targets, options) => new TheToggler.init(toggler, targets, options);
 
 	TheToggler.init = function (toggler, targets, options = {}) {
+
+		// User can pass element instead of selector
 		this.toggler = typeof toggler === 'string'
 			? document.querySelector(toggler)
 			: toggler
 
+		// If user provides a single string, do a querySelectorAll,
+		// If user provides an array of string, do a querySelector for each string
 		this.targets = typeof targets === 'string'
 			? [...document.querySelectorAll(targets)]
 			: targets.map(target => document.querySelector(target))
