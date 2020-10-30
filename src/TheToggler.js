@@ -87,8 +87,7 @@
 			...options,
 		}
 
-		if (this.options.activeByDefault)
-			this.toggleActive()
+		if (this.options.activeByDefault) this.toggleActive()
 	}
 
 	const debounce = function (id, fn, delay) {
