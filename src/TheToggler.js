@@ -50,13 +50,27 @@
 	}
 
 	TheToggler.prototype.toggleActive = function () {
-		[this.toggler, ...this.targets].map(el => {
-			this.isActive
-				? el.removeAttribute('data-active', '')
-				: el.setAttribute('data-active', '')
-		})
+		this.options.activateWith === 'attr'
+			? this.toggleWithAttr()
+			: this.toggleWithClass()
 
 		this.isActive = !this.isActive
+	}
+
+	TheToggler.prototype.toggleWithClass = function () {
+		[this.toggler, ...this.targets].map(el => {
+			this.isActive
+				? el.classList.remove(this.options.activeKey)
+				: el.classList.add(this.options.activeKey)
+		})
+	}
+
+	TheToggler.prototype.toggleWithAttr = function () {
+		[this.toggler, ...this.targets].map(el => {
+			this.isActive
+				? el.removeAttribute(this.options.activeKey)
+				: el.setAttribute(this.options.activeKey, '')
+		})
 	}
 
 	// Check options given in TheToggler function
