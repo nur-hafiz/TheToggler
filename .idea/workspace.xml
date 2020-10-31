@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c4338a36-7f2f-4bd6-903a-43ac2f49c711" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheToggler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheToggler.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../blog-test/cms" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -43,7 +42,8 @@
       <updated>1603704161515</updated>
       <workItem from="1603704163935" duration="9294000" />
       <workItem from="1603721282453" duration="136000" />
-      <workItem from="1603826477949" duration="6339000" />
+      <workItem from="1603826477949" duration="7116000" />
+      <workItem from="1604075995362" duration="386000" />
     </task>
     <servers />
   </component>
@@ -51,10 +51,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1603721416362">
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1604076383254">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="580" y="185" key="FileChooserDialogImpl/-1920.-6.1920.1040/0.0.1600.860@0.0.1600.860" timestamp="1603721416362" />
+    <state x="580" y="185" key="FileChooserDialogImpl/-1920.-6.1920.1040/0.0.1600.860@0.0.1600.860" timestamp="1604076383254" />
     <state x="623" y="225" width="670" height="58" key="search.everywhere.popup" timestamp="1604052293407">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
