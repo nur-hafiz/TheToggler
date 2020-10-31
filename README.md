@@ -3,7 +3,6 @@ A toggler library
 
 ## ReadMe contents
 1. Usage Guide
-2. Change Logs
 
 ## 1. Usage Guide
 TheToggler is a standalone JS library. No other dependancies required.
@@ -93,8 +92,3 @@ Let's add a sidebar that closes when other outside sidebar is clicked and specif
 #### Example 4 JavaScript
 ```const SIDEBAR_TOGGLE = TheToggler('#sidebar-toggler', '#sidebar', {activeKey: 'data-open', deactivateWhenClickOutTargets: true});```
  
-
-## 2. Change Logs
-### Ver 1.0.1
-1. Added activateWith and activeKey options
-2. Refactor TheToggler.js to use more ES6
